@@ -24,10 +24,6 @@ public class FluentReadingController {
         return new ResponseEntity<>("FluentReading is created successfully with id = " + fluentReading.getId(), HttpStatus.CREATED);
     }
 
-
-
-
-
     @RequestMapping(value = "/fluentReading/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getFluentReadingById(@PathVariable("id") int id) {
         boolean  isExist = fluentReadingService.isFluentReadingExist(id);

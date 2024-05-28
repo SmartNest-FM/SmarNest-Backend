@@ -87,6 +87,6 @@ public class ReadingComprehension {
 
     @ManyToOne
     @JoinColumn(name="level_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_LEVEL_ID_LEVEL"))
+            , foreignKey = @ForeignKey(name = "FK_LEVEL_ID_LEVEL_READING_COMPREHENSION"))
     private Level level;
 }
