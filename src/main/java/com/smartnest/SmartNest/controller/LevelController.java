@@ -35,4 +35,27 @@ public class LevelController {
             return new ResponseEntity<>(level, HttpStatus.OK);
         }
     }
+
+    @RequestMapping(value = "/level/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Object> updateLevel(@PathVariable("id") int id, @RequestBody Level level) {
+        boolean  isExist = levelService.isLevelExist(id);
+        if (!isExist){
+            throw  new UserNotFoundException();
+        }else{
+            level.setId(id);
+            levelService.updateLevel(level);
+            return new ResponseEntity<>("Level is updated successfully", HttpStatus.OK);
+        }
+    }
+
+    @RequestMapping(value = "/level/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Object> deleteLevel(@PathVariable("id") int id) {
+        boolean  isExist = levelService.isLevelExist(id);
+        if (!isExist){
+            throw  new UserNotFoundException();
+        }else{
+            levelService.deleteLevel(id);
+            return new ResponseEntity<>("Level is deleted successfully", HttpStatus.OK);
+        }
+    }
 }
