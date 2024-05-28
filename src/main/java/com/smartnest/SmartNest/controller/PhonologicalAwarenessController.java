@@ -1,9 +1,7 @@
 package com.smartnest.SmartNest.controller;
 
 import com.smartnest.SmartNest.exception.UserNotFoundException;
-import com.smartnest.SmartNest.model.Level;
 import com.smartnest.SmartNest.model.PhonologicalAwareness;
-import com.smartnest.SmartNest.service.LevelService;
 import com.smartnest.SmartNest.service.PhonologicalAwarenessService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
