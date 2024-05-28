@@ -87,6 +87,6 @@ public class FluentReading {
 
     @ManyToOne
     @JoinColumn(name="level_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_LEVEL_ID_LEVEL"))
+            , foreignKey = @ForeignKey(name = "FK_LEVEL_ID_LEVEL_FLUENT_READING"))
     private Level level;
 }
