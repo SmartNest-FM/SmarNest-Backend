@@ -1,8 +1,6 @@
 package com.smartnest.SmartNest.service.impl;
 
-import com.smartnest.SmartNest.model.Level;
 import com.smartnest.SmartNest.model.VocabularyVerb;
-import com.smartnest.SmartNest.repository.LevelRepository;
 import com.smartnest.SmartNest.repository.VocabularyVerbRepository;
 import com.smartnest.SmartNest.service.VocabularyVerbService;
 import org.springframework.beans.factory.annotation.Autowired;
