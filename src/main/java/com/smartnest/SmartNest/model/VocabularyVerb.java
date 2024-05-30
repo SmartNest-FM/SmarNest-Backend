@@ -2,6 +2,7 @@ package com.smartnest.SmartNest.model;
 
 import jakarta.persistence.*;
 
+@Entity
 public class VocabularyVerb {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

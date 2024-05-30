@@ -42,6 +42,7 @@ public class Vocabulary {
         this.image = image;
     }
 
+
     public VocabularyVerb getVocabularyVerb() {
         return vocabularyVerb;
     }
@@ -50,12 +51,15 @@ public class Vocabulary {
         this.vocabularyVerb = vocabularyVerb;
     }
 
+
     @Column(name="meaning", nullable = false, length = 100)
     private String meaning;
     @Column(name="image", nullable = false, length = 100)
     private String image;
+
     @ManyToOne
     @JoinColumn(name="vocabulary_verb_id", nullable = false
             , foreignKey = @ForeignKey(name = "FK_VOCABULARY_VERB_ID"))
     private VocabularyVerb vocabularyVerb;
+    
 }
