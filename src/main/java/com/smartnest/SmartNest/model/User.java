@@ -10,10 +10,10 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String uId;
-    private String nameTutor;
-    private String nameUser;
-    private String emailUser;
+    private String uid;
+    private String nametutor;
+    private String nameuser;
+    private String emailuser;
     private int age;
 
     public int getId() {
@@ -25,35 +25,35 @@ public class User {
     }
 
     public String getuId() {
-        return uId;
+        return uid;
     }
 
-    public void setuId(String uId) {
-        this.uId = uId;
+    public void setuId(String uid) {
+        this.uid = uid;
     }
 
     public String getNameTutor() {
-        return nameTutor;
+        return nametutor;
     }
 
-    public void setNameTutor(String nameTutor) {
-        this.nameTutor = nameTutor;
+    public void setNameTutor(String nametutor) {
+        this.nametutor = nametutor;
     }
 
     public String getNameUser() {
-        return nameUser;
+        return nameuser;
     }
 
-    public void setNameUser(String nameUser) {
-        this.nameUser = nameUser;
+    public void setNameUser(String nameuser) {
+        this.nameuser = nameuser;
     }
 
     public String getEmailUser() {
-        return emailUser;
+        return emailuser;
     }
 
-    public void setEmailUser(String emailUser) {
-        this.emailUser = emailUser;
+    public void setEmailUser(String emailuser) {
+        this.emailuser = emailuser;
     }
 
     public int getAge() {
@@ -65,14 +65,14 @@ public class User {
     }
 
     public String getPhotoUser() {
-        return photoUser;
+        return photouser;
     }
 
-    public void setPhotoUser(String photoUser) {
-        this.photoUser = photoUser;
+    public void setPhotoUser(String photouser) {
+        this.photouser = photouser;
     }
 
-    private String photoUser;
+    private String photouser;
 
 
 }

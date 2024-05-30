@@ -18,7 +18,7 @@ public class FeedbackController {
         return new ResponseEntity<>(feedbackService.getAllFeedbacks(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/feedback")
+    @RequestMapping(value = "/feedback", method = RequestMethod.POST)
     public ResponseEntity<Object> createFeedback(@RequestBody Feedback feedback) {
         feedbackService.createFeedback(feedback);
         return new ResponseEntity<>("Feedback is created successfully with id = " + feedback.getId(), HttpStatus.CREATED);

@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/user",method = RequestMethod.POST)
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
     public ResponseEntity<Object> createUser(@RequestBody User user){
         userService.createUser(user);
         return new ResponseEntity<>("User is created successfully with id = " + user.getId(), HttpStatus.CREATED);

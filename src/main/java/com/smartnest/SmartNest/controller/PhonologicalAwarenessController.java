@@ -18,7 +18,7 @@ public class PhonologicalAwarenessController {
         return new ResponseEntity<>(phonologicalAwarenessService.getAllPhonologicalAwareness(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/phonologicalAwareness")
+    @RequestMapping(value = "/phonologicalAwareness", method = RequestMethod.POST)
     public ResponseEntity<Object> createLevel(@RequestBody PhonologicalAwareness phonologicalAwareness) {
         phonologicalAwarenessService.createPhonologicalAwareness(phonologicalAwareness);
         return new ResponseEntity<>("PhonologicalAwareness is created successfully with id = " + phonologicalAwareness.getId(), HttpStatus.CREATED);

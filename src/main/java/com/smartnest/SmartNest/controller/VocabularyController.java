@@ -18,7 +18,7 @@ public class VocabularyController {
     public ResponseEntity<Object> getAllVocabulary(){
         return new ResponseEntity<>(vocabularyService.getAllVocabulary(), HttpStatus.OK);
     }
-    @PostMapping(value = "/vocabulary")
+    @RequestMapping(value = "/vocabulary", method = RequestMethod.POST)
     public ResponseEntity<Object> createVocabulary(@RequestBody Vocabulary vocabulary){
         vocabularyService.createVocabulary(vocabulary);
         return new ResponseEntity<>("Vocabulary is created successfully with id = " + vocabulary.getId(), HttpStatus.CREATED);

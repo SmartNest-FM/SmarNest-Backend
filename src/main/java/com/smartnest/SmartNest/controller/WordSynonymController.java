@@ -20,7 +20,7 @@ public class WordSynonymController {
         return new ResponseEntity<>(wordSynonymService.getAllWordSynonyms(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/wordSynonym")
+    @RequestMapping(value = "/wordSynonym", method = RequestMethod.POST)
     public ResponseEntity<Object> createWordSynonym(@RequestBody WordSynonym wordSynonym) {
         wordSynonymService.createWordSynonym(wordSynonym);
         return new ResponseEntity<>("wordSynonym is created successfully with id = " + wordSynonym.getId(), HttpStatus.CREATED);

@@ -18,8 +18,8 @@ public class VocabularyVerbsController {
         return new ResponseEntity<>(vocabularyVerbService.getAllVocabularyVerbs(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/vocabularyVerb")
-public ResponseEntity<Object> createVocabularyVerb(@RequestBody VocabularyVerb vocabularyVerb) {
+    @RequestMapping(value = "/vocabularyVerb", method = RequestMethod.POST)
+    public ResponseEntity<Object> createVocabularyVerb(@RequestBody VocabularyVerb vocabularyVerb) {
         vocabularyVerbService.createVocabularyVerb(vocabularyVerb);
         return new ResponseEntity<>("vocabularyVerb is created successfully with id = " + vocabularyVerb.getId(), HttpStatus.CREATED);
     }

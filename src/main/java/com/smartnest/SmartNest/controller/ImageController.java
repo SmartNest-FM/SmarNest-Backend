@@ -18,7 +18,7 @@ public class ImageController {
         return new ResponseEntity<>(imageService.getAllImages(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/imageService")
+    @RequestMapping(value = "/imageService", method = RequestMethod.POST)
     public ResponseEntity<Object> createImage(@RequestBody Image image) {
         imageService.createImage(image);
         return new ResponseEntity<>("Image is created successfully with id = " + image.getId(), HttpStatus.CREATED);

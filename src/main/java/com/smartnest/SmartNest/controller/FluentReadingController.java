@@ -18,7 +18,7 @@ public class FluentReadingController {
         return new ResponseEntity<>(fluentReadingService.getAllFluentReadings(), HttpStatus.OK);
     }
 
-   @PostMapping(value = "/fluentReading")
+    @RequestMapping(value = "/fluentReading", method = RequestMethod.POST)
     public ResponseEntity<Object> createLevel(@RequestBody FluentReading fluentReading) {
         fluentReadingService.createFluentReading(fluentReading);
         return new ResponseEntity<>("FluentReading is created successfully with id = " + fluentReading.getId(), HttpStatus.CREATED);

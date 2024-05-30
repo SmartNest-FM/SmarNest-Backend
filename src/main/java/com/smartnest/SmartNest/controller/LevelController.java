@@ -18,7 +18,7 @@ public class LevelController {
         return new ResponseEntity<>(levelService.getAllLevels(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/level")
+    @RequestMapping(value = "/level", method = RequestMethod.POST)
     public ResponseEntity<Object> createLevel(@RequestBody Level level) {
         levelService.createLevel(level);
         return new ResponseEntity<>("Level is created successfully with id = " + level.getId(), HttpStatus.CREATED);

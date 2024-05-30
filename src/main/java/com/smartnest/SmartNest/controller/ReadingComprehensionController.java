@@ -18,7 +18,7 @@ public class ReadingComprehensionController {
         return new ResponseEntity<>(readingComprehensionService.getAllReadingComprehensions(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/readingComprehension")
+    @RequestMapping(value = "/readingComprehension", method = RequestMethod.POST)
     public ResponseEntity<Object> createLevel(@RequestBody ReadingComprehension readingComprehension) {
         readingComprehensionService.createReadingComprehension(readingComprehension);
         return new ResponseEntity<>("ReadingComprehension is created successfully with id = " + readingComprehension.getId(), HttpStatus.CREATED);

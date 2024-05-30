@@ -18,7 +18,7 @@ public class CombinationReadingImagesController {
         return new ResponseEntity<>(combinationReadingImagesService.getAllCombinationReadingImages(), HttpStatus.OK);
     }
 
-    @PostMapping(value = "/combinationReadingImagesService")
+    @RequestMapping(value = "/combinationReadingImagesService", method = RequestMethod.POST)
     public ResponseEntity<Object> createCombinationReadingImages(@RequestBody CombinationReadingImages combinationReadingImages) {
         combinationReadingImagesService.createCombinationReadingImages(combinationReadingImages);
         return new ResponseEntity<>("CombinationReadingImages is created successfully with id = " + combinationReadingImages.getId(), HttpStatus.CREATED);
