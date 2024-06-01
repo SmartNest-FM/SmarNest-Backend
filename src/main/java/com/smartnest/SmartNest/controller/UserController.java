@@ -57,4 +57,15 @@ public class UserController {
             return new ResponseEntity<>("User is deleted successfully", HttpStatus.OK);
         }
     }
+
+    @RequestMapping(value = "/user/by-uid/{uid}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getUserByUid(@PathVariable("uid") String uid) {
+        User user = userService.getUserByUid(uid);
+        if (user == null) {
+            throw new UserNotFoundException();
+        }
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+
 }

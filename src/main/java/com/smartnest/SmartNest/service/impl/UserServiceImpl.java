@@ -38,4 +38,10 @@ public class UserServiceImpl implements UserService {
     public boolean isUserExist(int id) {
         return userRepository.existsById(id);
     }
+
+    @Override
+    public User getUserByUid(String uid) {
+        return userRepository.findByUid(uid);
+    }
+
 }

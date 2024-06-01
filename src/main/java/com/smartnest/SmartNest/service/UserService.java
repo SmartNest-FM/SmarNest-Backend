@@ -11,4 +11,5 @@ public interface UserService {
     public abstract List<User> getAllUsers();
     public abstract void deleteUser(int id);
     public abstract boolean isUserExist(int id);
+    public abstract User getUserByUid(String uid);
 }
