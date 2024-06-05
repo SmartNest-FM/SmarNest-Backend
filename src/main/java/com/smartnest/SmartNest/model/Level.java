@@ -2,17 +2,20 @@ package com.smartnest.SmartNest.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 public class Level {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="url_img", nullable = false, length = 100)
+    @Column(name="url_img", nullable = false, length = 512)
     private String urlImg;
     @Column(name="name", nullable = false, length = 100)
     private String name;
     @Column(name="percentage", nullable = false)
     private int percentage;
+
 
     public int getId() {
         return id;
@@ -46,18 +49,8 @@ public class Level {
         this.percentage = percentage;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_USER_ID_LEVEL"))
-    private User user;
 
 
 }

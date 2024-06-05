@@ -7,7 +7,7 @@ public class PhonologicalAwareness {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name="main_image", nullable = false, length = 100)
+    @Column(name="main_image", nullable = false, length = 250)
     private String mainImage;
 
     public int getId() {
@@ -74,6 +74,39 @@ public class PhonologicalAwareness {
     private String correctAnswer;
     @Column(name="is_correct", nullable = false)
     private boolean isCorrect;
+
+    public String getAnswerOne() {
+        return answerOne;
+    }
+
+    public void setAnswerOne(String answerOne) {
+        this.answerOne = answerOne;
+    }
+
+    public String getAnswerTwo() {
+        return answerTwo;
+    }
+
+    public void setAnswerTwo(String answerTwo) {
+        this.answerTwo = answerTwo;
+    }
+
+    public String getAnswerThree() {
+        return answerThree;
+    }
+
+    public void setAnswerThree(String answerThree) {
+        this.answerThree = answerThree;
+    }
+
+    @Column(name="answer_one", nullable = false, length = 300)
+    private String answerOne;
+
+    @Column(name="answer_two", nullable = false, length = 300)
+    private String answerTwo;
+
+    @Column(name="answer_three", nullable = false, length = 300)
+    private String answerThree;
 
     @ManyToOne
     @JoinColumn(name="level_id", nullable = false
