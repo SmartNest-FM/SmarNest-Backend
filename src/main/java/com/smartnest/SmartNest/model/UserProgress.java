@@ -45,21 +45,6 @@ public class UserProgress {
         this.phonologicalAwareness = phonologicalAwareness;
     }
 
-    public boolean isCompleted() {
-        return isCompleted;
-    }
-
-    public void setCompleted(boolean completed) {
-        isCompleted = completed;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
-    }
 
     @ManyToOne
     @JoinColumn(name = "level_id", nullable = false,
@@ -71,9 +56,47 @@ public class UserProgress {
             foreignKey = @ForeignKey(name = "FK_PHONOLOGICAL_AWARENESS  _ID_USER_PROGRESS"))
     private PhonologicalAwareness phonologicalAwareness;
 
-    @Column(name = "is_completed", nullable = false)
-    private boolean isCompleted;
+    @Column(name = "completed_level", nullable = false)
+    private boolean completedLevel;
 
-    @Column(name = "score", nullable = false)
-    private int score;
+    @Column(name = "score_level", nullable = false)
+    private int scoreLevel;
+
+    @Column(name = "completed_activity", nullable = false)
+    private boolean completedActivity;
+
+    public boolean isCompletedLevel() {
+        return completedLevel;
+    }
+
+    public void setCompletedLevel(boolean completedLevel) {
+        this.completedLevel = completedLevel;
+    }
+
+    public int getScoreLevel() {
+        return scoreLevel;
+    }
+
+    public void setScoreLevel(int scoreLevel) {
+        this.scoreLevel = scoreLevel;
+    }
+
+    public boolean isCompletedActivity() {
+        return completedActivity;
+    }
+
+    public void setCompletedActivity(boolean completedActivity) {
+        this.completedActivity = completedActivity;
+    }
+
+    public int getScoreActivity() {
+        return scoreActivity;
+    }
+
+    public void setScoreActivity(int scoreActivity) {
+        this.scoreActivity = scoreActivity;
+    }
+
+    @Column(name = "score_activity", nullable = false)
+    private int scoreActivity;
 }
