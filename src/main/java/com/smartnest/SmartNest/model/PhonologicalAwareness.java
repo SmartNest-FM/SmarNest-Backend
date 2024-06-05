@@ -50,13 +50,7 @@ public class PhonologicalAwareness {
         this.correctAnswer = correctAnswer;
     }
 
-    public boolean isCorrect() {
-        return isCorrect;
-    }
 
-    public void setCorrect(boolean correct) {
-        isCorrect = correct;
-    }
 
     public Level getLevel() {
         return level;
@@ -72,8 +66,17 @@ public class PhonologicalAwareness {
     private String userResponse;
     @Column(name="correct_answer", nullable = false, length = 100)
     private String correctAnswer;
-    @Column(name="is_correct", nullable = false)
-    private boolean isCorrect;
+
+    public boolean isCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(boolean correct) {
+        this.correct = correct;
+    }
+
+    @Column(name="correct", nullable = false)
+    private boolean correct;
 
     public String getAnswerOne() {
         return answerOne;
