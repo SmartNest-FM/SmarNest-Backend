@@ -56,14 +56,6 @@ public class ReadingComprehension {
         this.correctAnswer = correctAnswer;
     }
 
-    public boolean isCorrect() {
-        return isCorrect;
-    }
-
-    public void setCorrect(boolean correct) {
-        isCorrect = correct;
-    }
-
     public Level getLevel() {
         return level;
     }
@@ -82,8 +74,49 @@ public class ReadingComprehension {
     private String userResponse;
     @Column(name="correct_answer", nullable = false, length = 100)
     private String correctAnswer;
-    @Column(name="is_correct", nullable = false)
-    private boolean isCorrect;
+    @Column(name="correct", nullable = false)
+    private boolean correct;
+
+    @Column(name="answer_one", nullable = false, length = 300)
+    private String answerOne;
+
+    @Column(name="answer_two", nullable = false, length = 300)
+    private String answerTwo;
+
+    public boolean isCorrect() {
+        return correct;
+    }
+
+    public void setCorrect(boolean correct) {
+        this.correct = correct;
+    }
+
+    public String getAnswerOne() {
+        return answerOne;
+    }
+
+    public void setAnswerOne(String answerOne) {
+        this.answerOne = answerOne;
+    }
+
+    public String getAnswerTwo() {
+        return answerTwo;
+    }
+
+    public void setAnswerTwo(String answerTwo) {
+        this.answerTwo = answerTwo;
+    }
+
+    public String getAnswerThree() {
+        return answerThree;
+    }
+
+    public void setAnswerThree(String answerThree) {
+        this.answerThree = answerThree;
+    }
+
+    @Column(name="answer_three", nullable = false, length = 300)
+    private String answerThree;
 
     @ManyToOne
     @JoinColumn(name="level_id", nullable = false

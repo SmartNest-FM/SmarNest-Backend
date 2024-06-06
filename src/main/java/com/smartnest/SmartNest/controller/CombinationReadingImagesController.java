@@ -13,18 +13,18 @@ public class CombinationReadingImagesController {
     @Autowired
     CombinationReadingImagesService combinationReadingImagesService;
 
-    @RequestMapping(value = "/combinationReadingImagesService", method = RequestMethod.GET)
+    @RequestMapping(value = "/combinationReadingImages", method = RequestMethod.GET)
     public ResponseEntity<Object> getAllCombinationReadingImages() {
         return new ResponseEntity<>(combinationReadingImagesService.getAllCombinationReadingImages(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/combinationReadingImagesService", method = RequestMethod.POST)
+    @RequestMapping(value = "/combinationReadingImages", method = RequestMethod.POST)
     public ResponseEntity<Object> createCombinationReadingImages(@RequestBody CombinationReadingImages combinationReadingImages) {
         combinationReadingImagesService.createCombinationReadingImages(combinationReadingImages);
         return new ResponseEntity<>("CombinationReadingImages is created successfully with id = " + combinationReadingImages.getId(), HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/combinationReadingImagesService/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/combinationReadingImages/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getCombinationReadingImagesById(@PathVariable("id") int id) {
         boolean  isExist = combinationReadingImagesService.isCombinationReadingImagesExist(id);
         if (!isExist){
@@ -36,7 +36,7 @@ public class CombinationReadingImagesController {
     }
 
 
-    @RequestMapping(value = "/combinationReadingImagesService/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/combinationReadingImages/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateCombinationReadingImages(@PathVariable("id") int id, @RequestBody CombinationReadingImages combinationReadingImages) {
         boolean  isExist = combinationReadingImagesService.isCombinationReadingImagesExist(id);
         if (!isExist){
@@ -49,7 +49,7 @@ public class CombinationReadingImagesController {
     }
 
 
-    @RequestMapping(value = "/combinationReadingImagesService/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/combinationReadingImages/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> deleteCombinationReadingImages(@PathVariable("id") int id) {
         boolean  isExist = combinationReadingImagesService.isCombinationReadingImagesExist(id);
         if (!isExist){
