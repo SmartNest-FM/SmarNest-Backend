@@ -1,12 +1,15 @@
 package com.smartnest.SmartNest.controller;
 
 import com.smartnest.SmartNest.exception.UserNotFoundException;
+import com.smartnest.SmartNest.model.VerbSynonym;
 import com.smartnest.SmartNest.model.VocabularyVerb;
 import com.smartnest.SmartNest.service.VocabularyVerbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class VocabularyVerbsController {
@@ -59,5 +62,6 @@ public class VocabularyVerbsController {
             return new ResponseEntity<>("vocabularyVerb is deleted successfully", HttpStatus.OK);
         }
     }
+
 
 }

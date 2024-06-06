@@ -1,5 +1,6 @@
 package com.smartnest.SmartNest.service.impl;
 
+import com.smartnest.SmartNest.model.VerbSynonym;
 import com.smartnest.SmartNest.model.VocabularyVerb;
 import com.smartnest.SmartNest.repository.VocabularyVerbRepository;
 import com.smartnest.SmartNest.service.VocabularyVerbService;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class VocabularyVerbServiceImpl implements VocabularyVerbService {
@@ -36,5 +38,11 @@ public class VocabularyVerbServiceImpl implements VocabularyVerbService {
     public boolean isVocabularyVerbExist(int id) {
         return vocabularyVerbRepository.existsById(id);
     }
+
+    @Override
+    public Optional<VocabularyVerb> findById(int id) {
+        return vocabularyVerbRepository.findById(id);
+    }
+
 
 }
