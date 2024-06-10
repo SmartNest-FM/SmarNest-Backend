@@ -13,22 +13,22 @@ public class Feedback {
     private String image;
 
     @OneToOne
-    @JoinColumn(name="feedback_phonological_awareness_id", nullable = false
+    @JoinColumn(name="feedback_phonological_awareness_id"
             , foreignKey = @ForeignKey(name = "FK_FEEDBACK_PHONOLOGICAL_AWARENESS_ID"))
     private PhonologicalAwareness phonologicalAwareness;
 
     @OneToOne
-    @JoinColumn(name="feedback_reading_comprehension_id", nullable = false
+    @JoinColumn(name="feedback_reading_comprehension_id"
             , foreignKey = @ForeignKey(name = "FK_FEEDBACK_READING_COMPREHENSION_ID"))
     private ReadingComprehension readingComprehension;
 
     @OneToOne
-    @JoinColumn(name="feedback_fluent_reading_id", nullable = false
+    @JoinColumn(name="feedback_fluent_reading_id"
             , foreignKey = @ForeignKey(name = "FK_FEEDBACK_FLUENT_READING_ID"))
     private FluentReading fluentReading;
 
     @OneToOne
-    @JoinColumn(name="feedback_combination_reading_images_id", nullable = false
+    @JoinColumn(name="feedback_combination_reading_images_id"
             , foreignKey = @ForeignKey(name = "FK_FEEDBACK_COMBINATION_READING_ID"))
     private CombinationReadingImages combinationReadingImages;
 
@@ -97,7 +97,7 @@ public class Feedback {
     }
 
     @OneToOne
-    @JoinColumn(name="feedback_vocabulary_verb_id", nullable = false
+    @JoinColumn(name="feedback_vocabulary_verb_id"
             , foreignKey = @ForeignKey(name = "FK_FEEDBACK_VOCABULARY_VERB_ID"))
     private VocabularyVerb vocabularyVerb;
 
