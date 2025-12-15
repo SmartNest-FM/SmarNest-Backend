@@ -14,7 +14,7 @@ public class Level {
     @Column(name="name", nullable = false, length = 100)
     private String name;
     @Column(name="percentage", nullable = false)
-    private int percentage;
+    private Integer percentage;
 
 
     public int getId() {
@@ -41,11 +41,11 @@ public class Level {
         this.name = name;
     }
 
-    public int getPercentage() {
+    public Integer getPercentage() {
         return percentage;
     }
 
-    public void setPercentage(int percentage) {
+    public void setPercentage(Integer  percentage) {
         this.percentage = percentage;
     }
 
